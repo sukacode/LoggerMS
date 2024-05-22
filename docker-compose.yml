@@ -1,0 +1,15 @@
+version: "2"
+services:
+  api:
+    container_name: logger-ms
+    build: .
+    command: nodemon server.js
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+
+    ports:
+      - "3000:3000"
+
+    # depends_on:
+    #   - db
